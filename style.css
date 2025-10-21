@@ -1,0 +1,23 @@
+:root {
+  --bg-blue: #506c84;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./images/Library\ Backdrop.png);
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  background-color: var(--bg-blue);
+  display: block;
+  margin: 2rem auto;
+  padding: 10px;
+  text-align: center;
+}

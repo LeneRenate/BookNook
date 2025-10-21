@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <h1>My BookNook</h1>
+    <div id="addBook">
+      <div class="inputFields">
+        <label for="bookTitleInput">Name of Book</label>
+        <input
+          type="text"
+          name="bookTitleInput"
+          id="bookTitleInput"
+          placeholder="The Lord of the Rings"
+        />
+      </div>
+      <div class="inputFields">
+        <label for="bookAuthorInput">Written by:</label>
+        <input
+          type="text"
+          name="bookAuthorInput"
+          id="bookAuthorInput"
+          placeholder="J. R. R. Tolkien"
+        />
+      </div>
+      <div class="inputFields">
+        <label for="bookYearInput">Published in:</label>
+        <input
+          type="text"
+          name="bookAuthorInput"
+          id="bookYearInput"
+          placeholder="1954"
+        />
+      </div>
+      <div class="inputFields">
+        <label for="bookPagesInput">Pages:</label>
+        <input
+          type="text"
+          name="bookPagesInput"
+          id="bookPagesInput"
+          placeholder="1077"
+        />
+      </div>
+      <div class="inputFields">
+        <label for="bookGenreInput">Genre:</label>
+        <input
+          type="text"
+          name="bookGenreInput"
+          id="bookGenreInput"
+          placeholder="Fantasy"
+        />
+      </div>
+    </div>
+    <button id="saveBtn">Save to library</button>
+    <section id="myLibrary"></section>
+  </body>
+</html>
