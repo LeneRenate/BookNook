@@ -60,10 +60,11 @@ function bookCardCreate() {
   }
 }
 
-///////////////////////////////////////
-// if (
-//   (titleOf || authorOf || yearOf || pagesOf || genreOf === "") &&
-//   (titleOf || authorOf || yearOf || pagesOf || genreOf === null)
-// ) {
-//   alert("Fill in all boxes");
-// }
+if (
+  localStorage.getItem("savedTitles") !== "" &&
+  localStorage.getItem("savedTitles") !== null
+) {
+  console.log("You have books in your library - YAY!");
+} else {
+  console.log("local storage is empty");
+}
