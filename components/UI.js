@@ -12,23 +12,23 @@ const makeBookCard = (object, id) => {
 
   const bookTitle = document.createElement("h2");
   bookTitle.classList.add("bookTitle");
-  bookTitle.textContent = titleOf;
+  bookTitle.textContent = title;
 
   const bookAuthor = document.createElement("p");
   bookAuthor.classList.add("bookAuthor");
-  bookAuthor.textContent = authorOf;
+  bookAuthor.textContent = author;
 
   const bookYear = document.createElement("p");
   bookYear.classList.add("bookYear");
-  bookYear.textContent = yearOf;
+  bookYear.textContent = year;
 
   const bookPages = document.createElement("p");
   bookPages.classList.add("bookPages");
-  bookPages.textContent = pagesOf;
+  bookPages.textContent = pages;
 
   const bookGenre = document.createElement("p");
   bookGenre.classList.add("bookGenre");
-  bookGenre.textContent = genreOf;
+  bookGenre.textContent = genre;
 
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "Delete";

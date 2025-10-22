@@ -19,11 +19,11 @@ const getFormData = (formElement) => {
 const makeBook = (formElement) => {
   const data = getFormData(formElement);
   const book = new Book(
-    data.titleOf,
-    data.authorOf,
-    data.yearOf,
-    data.pagesOf,
-    data.genreOf
+    data.bookTitleInput,
+    data.bookAuthorInput,
+    data.bookYearInput,
+    data.bookPagesInput,
+    data.bookGenreInput
   );
   storeBooks(book);
 };
