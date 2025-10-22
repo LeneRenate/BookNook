@@ -68,3 +68,5 @@ if (
 } else {
   console.log("local storage is empty");
 }
+
+// localStorage.clear();
