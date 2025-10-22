@@ -6,57 +6,44 @@ const genreOf = document.getElementById("bookGenreInput");
 const saveBook = document.getElementById("saveBtn");
 const myLibrary = document.getElementById("myLibrary");
 
-let titleArray = [];
-let authorArray = [];
-let yearArray = [];
-let pagesArray = [];
-let genreArray = [];
+const savedBooks = [];
 
 saveBook.addEventListener("click", () => {
-  titleArray.push(titleOf.value);
-  authorArray.push(authorOf.value);
-  yearArray.push(yearOf.value);
-  pagesArray.push(pagesOf.value);
-  genreArray.push(genreOf.value);
-  books();
+  const book = {
+    title: titleOf.value,
+    author: authorOf.value,
+    year: yearOf.value,
+    pages: pagesOf.value,
+    genre: genreOf.value,
+  };
+  // localStorage.setItem("book", JSON.stringify(book));
+  savedBooks.push(book);
+  localStorage.setItem("savedBooks", JSON.stringify(savedBooks));
   bookCardCreate();
 });
 
-const books = () => {
-  localStorage.setItem("savedTitles", JSON.stringify(titleArray));
-  console.log(titleArray);
-  localStorage.setItem("savedAuthors", JSON.stringify(authorArray));
-  console.log(authorArray);
-  localStorage.setItem("savedYears", JSON.stringify(yearArray));
-  console.log(yearArray);
-  localStorage.setItem("savedPages", JSON.stringify(pagesArray));
-  console.log(pagesArray);
-  localStorage.setItem("savedGenres", JSON.stringify(genreArray));
-  console.log(genreArray);
-};
-
 function bookCardCreate() {
   myLibrary.textContent = "";
-  for (i = 0; i < titleArray.length; i++) {
-    const book = document.createElement("article");
-    book.classList.add("book");
+  for (i = 0; i < savedBooks.length; i++) {
+    const bookDisplay = document.createElement("article");
+    bookDisplay.classList.add("book");
     const bookTitle = document.createElement("h2");
     bookTitle.classList.add("bookTitle");
-    bookTitle.textContent = titleArray[i];
+    bookTitle.textContent = savedBooks[i].title;
     const bookAuthor = document.createElement("p");
     bookAuthor.classList.add("bookAuthor");
-    bookAuthor.textContent = authorArray[i];
+    bookAuthor.textContent = savedBooks[i].author;
     const bookYear = document.createElement("p");
     bookYear.classList.add("bookYear");
-    bookYear.textContent = yearArray[i];
+    bookYear.textContent = savedBooks[i].year;
     const bookPages = document.createElement("p");
     bookPages.classList.add("bookPages");
-    bookPages.textContent = pagesArray[i];
+    bookPages.textContent = savedBooks[i].pages;
     const bookGenre = document.createElement("p");
     bookGenre.classList.add("bookGenre");
-    bookGenre.textContent = genreArray[i];
-    book.append(bookTitle, bookAuthor, bookYear, bookPages, bookGenre);
-    myLibrary.appendChild(book);
+    bookGenre.textContent = savedBooks[i].genre;
+    bookDisplay.append(bookTitle, bookAuthor, bookYear, bookPages, bookGenre);
+    myLibrary.appendChild(bookDisplay);
   }
 }
 
@@ -65,8 +52,7 @@ if (
   localStorage.getItem("savedTitles") !== null
 ) {
   console.log("You have books in your library - YAY!");
+  bookCardCreate();
 } else {
   console.log("local storage is empty");
 }
-
-// localStorage.clear();
