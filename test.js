@@ -1,5 +1,5 @@
 import { Book } from "./components/Book.js";
-import { storeBooks } from "./components/localstorage.js";
+import { storeBooks } from "./components/LocalStorage.js";
 import { updateDisplayedBooks } from "./components/UI.js";
 
 const formElement = document.getElementById("bookForm");
@@ -19,11 +19,11 @@ const getFormData = (formElement) => {
 const makeBook = (formElement) => {
   const data = getFormData(formElement);
   const book = new Book(
-    data.title,
-    data.author,
-    data.year,
-    data.pages,
-    data.genre
+    data.titleOf,
+    data.authorOf,
+    data.yearOf,
+    data.pagesOf,
+    data.genreOf
   );
   storeBooks(book);
 };

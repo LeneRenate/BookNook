@@ -6,3 +6,7 @@ export const dom = {
   pagesOf: document.getElementById("bookPagesInput"),
   genreOf: document.getElementById("bookGenreInput"),
 };
+
+// Add:
+// Sort-section + sortBtn (also in html)
+// Filter-section + filterBtn (also in html)

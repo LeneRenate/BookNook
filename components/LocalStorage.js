@@ -1,5 +1,5 @@
 export const storeBooks = (book) => {
-  localStorage.setItem(book.id.JSON.stringify(book));
+  localStorage.setItem(book.id, JSON.stringify(book));
 };
 
 export const fetchBooks = () => {
