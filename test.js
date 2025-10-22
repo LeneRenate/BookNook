@@ -1,22 +1,31 @@
-/******************************************************************************
-1st:
-Import components: class/Book, localStorage, UI/display
-******************************************************************************/
-
 import { Book } from "./components/Book.js";
 import { storeBooks } from "./components/LocalStorage.js";
+import { updateDisplayedBooks } from "./components/UI.js";
 
-/******************************************************************************
-2nd:
-const form
-******************************************************************************/
+const formElement = document.getElementById("addBook");
+const saveBtn = document.getElementById("saveBtn");
 
-/******************************************************************************
-3rd:
-EventListeners
-******************************************************************************/
+saveBtn.addEventListener("click", (_event) => {
+  _event.preventDefault();
+  makeBook(formElement);
+  updateDisplayedBooks();
+});
 
-/******************************************************************************
-4th:
+const getFormData = (formElement) => {
+  const formData = new FormData(formElement);
+  return Object.fromEntries(formData);
+};
 
-******************************************************************************/
+const makeBook = (formElement) => {
+  const data = getFormData(formElement);
+  const book = new Book(
+    data.title,
+    data.author,
+    data.year,
+    data.pages,
+    data.genre
+  );
+  storeBooks(book);
+};
+
+document.addEventListener("DOMContentLoaded", updateDisplayedBooks);
