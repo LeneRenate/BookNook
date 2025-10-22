@@ -1,4 +1,4 @@
-import { fetchBooks, deleteBook } from "./LocalStorage";
+import { fetchBooks, deleteBook } from "./localstorage.js";
 import { dom } from "./DOM.js";
 
 const { myLibrary, titleOf, authorOf, yearOf, pagesOf, genreOf } = dom;

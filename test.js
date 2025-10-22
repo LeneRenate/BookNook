@@ -1,8 +1,8 @@
 import { Book } from "./components/Book.js";
-import { storeBooks } from "./components/LocalStorage.js";
+import { storeBooks } from "./components/localstorage.js";
 import { updateDisplayedBooks } from "./components/UI.js";
 
-const formElement = document.getElementById("addBook");
+const formElement = document.getElementById("bookForm");
 const saveBtn = document.getElementById("saveBtn");
 
 saveBtn.addEventListener("click", (_event) => {

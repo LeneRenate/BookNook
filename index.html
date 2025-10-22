@@ -9,54 +9,58 @@
   </head>
   <body>
     <h1>My BookNook</h1>
-    <form id="addBook">
-      <div class="inputFields">
-        <label for="bookTitleInput">Name of Book</label>
-        <input
-          type="text"
-          name="bookTitleInput"
-          id="bookTitleInput"
-          placeholder="The Lord of the Rings"
-        />
-      </div>
-      <div class="inputFields">
-        <label for="bookAuthorInput">Written by:</label>
-        <input
-          type="text"
-          name="bookAuthorInput"
-          id="bookAuthorInput"
-          placeholder="J. R. R. Tolkien"
-        />
-      </div>
-      <div class="inputFields">
-        <label for="bookYearInput">Published in:</label>
-        <input
-          type="text"
-          name="bookAuthorInput"
-          id="bookYearInput"
-          placeholder="1954"
-        />
-      </div>
-      <div class="inputFields">
-        <label for="bookPagesInput">Pages:</label>
-        <input
-          type="text"
-          name="bookPagesInput"
-          id="bookPagesInput"
-          placeholder="1077"
-        />
-      </div>
-      <div class="inputFields">
-        <label for="bookGenreInput">Genre:</label>
-        <input
-          type="text"
-          name="bookGenreInput"
-          id="bookGenreInput"
-          placeholder="Fantasy"
-        />
-      </div>
-    </form>
-    <button id="saveBtn">Save to library</button>
+    <section id="addBook">
+      <form id="bookForm">
+        <div class="infoFields">
+          <label for="bookTitleInput">Name of Book:</label>
+          <input
+            type="text"
+            name="bookTitleInput"
+            id="bookTitleInput"
+            placeholder="The Lord of the Rings"
+            required
+          />
+        </div>
+        <div class="infoFields">
+          <label for="bookAuthorInput">Written by:</label>
+          <input
+            type="text"
+            name="bookAuthorInput"
+            id="bookAuthorInput"
+            placeholder="J. R. R. Tolkien"
+            required
+          />
+        </div>
+        <div class="infoFields">
+          <label for="bookYearInput">Published in:</label>
+          <input
+            type="text"
+            name="bookAuthorInput"
+            id="bookYearInput"
+            placeholder="1954"
+          />
+        </div>
+        <div class="infoFields">
+          <label for="bookPagesInput">Pages:</label>
+          <input
+            type="text"
+            name="bookPagesInput"
+            id="bookPagesInput"
+            placeholder="1077"
+          />
+        </div>
+        <div class="infoFields">
+          <label for="bookGenreInput">Genre:</label>
+          <input
+            type="text"
+            name="bookGenreInput"
+            id="bookGenreInput"
+            placeholder="Fantasy"
+          />
+        </div>
+      </form>
+      <button id="saveBtn">Save to library</button>
+    </section>
     <section id="myLibrary"></section>
   </body>
 </html>
