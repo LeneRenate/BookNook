@@ -93,7 +93,16 @@ export const updateDisplayedBooks = () => {
     booksDisplayed = allBooks.filter((book) => book.genre === filterValue);
   } else if (sortValue === "titleAZ") {
     booksDisplayed = allBooks.sort((a, b) => a.title.localeCompare(b.title));
-    console.log("hei");
+  } else if (sortValue === "titleZA") {
+    booksDisplayed = allBooks.sort((a, b) => b.title.localeCompare(a.title));
+  } else if (sortValue === "ascYear") {
+    booksDisplayed = allBooks.sort((a, b) => a.year - b.year);
+  } else if (sortValue === "desYear") {
+    booksDisplayed = allBooks.sort((a, b) => b.year - a.year);
+  } else if (sortValue === "ascPages") {
+    booksDisplayed = allBooks.sort((a, b) => a.pages - b.pages);
+  } else if (sortValue === "desPages") {
+    booksDisplayed = allBooks.sort((a, b) => b.pages - a.pages);
   } else {
     booksDisplayed = allBooks;
   }
@@ -111,12 +120,16 @@ const renderUI = (booksDisplayed) => {
   }
 };
 
-// Add eventListeners (updateBooksDisplayed on click) for filter and sort
-
 filterBtn.addEventListener("click", () => {
   updateDisplayedBooks();
 });
 
 sortBtn.addEventListener("click", () => {
+  updateDisplayedBooks();
+});
+
+resetBtn.addEventListener("click", () => {
+  console.log("reset kjører");
+  filterSelect.value = null;
   updateDisplayedBooks();
 });

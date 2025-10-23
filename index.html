@@ -4,113 +4,112 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="main.js" defer></script>
-    <!-- <script src="ClearStorage.js"></script> -->
     <title>My BookNook</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>My BookNook</h1>
-    <section id="addBook">
-      <form id="bookForm">
-        <div class="infoFields">
-          <label for="bookTitleInput">Name of Book:</label>
-          <input
-            type="text"
-            name="bookTitleInput"
-            id="bookTitleInput"
-            placeholder="The Lord of the Rings"
-            required
-          />
-        </div>
-        <div class="infoFields">
-          <label for="bookAuthorInput">Written by:</label>
-          <input
-            type="text"
-            name="bookAuthorInput"
-            id="bookAuthorInput"
-            placeholder="J. R. R. Tolkien"
-            required
-          />
-        </div>
-        <div class="infoFields">
-          <label for="bookYearInput">Published in:</label>
-          <input
-            type="number"
-            name="bookYearInput"
-            id="bookYearInput"
-            placeholder="1954"
-          />
-        </div>
-        <div class="infoFields">
-          <label for="bookPagesInput">Pages:</label>
-          <input
-            type="number"
-            name="bookPagesInput"
-            id="bookPagesInput"
-            placeholder="1077"
-          />
-        </div>
-        <div class="infoFields">
-          <label for="bookGenreInput">Genre:</label>
-          <select name="bookGenreInput" id="bookGenreInput">
-            <option value="" selected disabled hidden>Choose genre</option>
-            <option value="ya">Young Adult (YA)</option>
-            <option value="fantasy">Fantasy</option>
-            <option value="crime">Crime</option>
-            <option value="romance">Romance</option>
-            <option value="horror">Horror</option>
-            <option value="mystery">Mystery/Thriller</option>
-            <option value="science">Science</option>
-            <option value="history">History</option>
-            <option value="children">Children's Stories</option>
-            <option value="biography">Biography</option>
-            <option value="self-improvement">Self-Improvement</option>
-            <option value="historical Fiction">Historical Fiction</option>
-            <option value="humor">Humor</option>
-            <option value="sci-fi">Sci-Fi</option>
+    <main>
+      <section id="addBook">
+        <form id="bookForm">
+          <div class="infoFields">
+            <label for="bookTitleInput">Name of Book:</label>
+            <input
+              type="text"
+              name="bookTitleInput"
+              id="bookTitleInput"
+              placeholder="The Lord of the Rings"
+              required
+            />
+          </div>
+          <div class="infoFields">
+            <label for="bookAuthorInput">Written by:</label>
+            <input
+              type="text"
+              name="bookAuthorInput"
+              id="bookAuthorInput"
+              placeholder="J. R. R. Tolkien"
+              required
+            />
+          </div>
+          <div class="infoFields">
+            <label for="bookYearInput">Published in:</label>
+            <input
+              type="number"
+              name="bookYearInput"
+              id="bookYearInput"
+              placeholder="1954"
+            />
+          </div>
+          <div class="infoFields">
+            <label for="bookPagesInput">Pages:</label>
+            <input
+              type="number"
+              name="bookPagesInput"
+              id="bookPagesInput"
+              placeholder="1077"
+            />
+          </div>
+          <div class="infoFields">
+            <label for="bookGenreInput">Genre:</label>
+            <select name="bookGenreInput" id="bookGenreInput">
+              <option value="" selected disabled hidden>Choose genre</option>
+              <option value="Young Adult (YA)">Young Adult (YA)</option>
+              <option value="Fantasy">Fantasy</option>
+              <option value="Crime">Crime</option>
+              <option value="Romance">Romance</option>
+              <option value="Horror">Horror</option>
+              <option value="Mystery">Mystery/Thriller</option>
+              <option value="Science">Science</option>
+              <option value="History">History</option>
+              <option value="Children's Stories">Children's Stories</option>
+              <option value="Biography">Biography</option>
+              <option value="Self-Improvement">Self-Improvement</option>
+              <option value="Historical Fiction">Historical Fiction</option>
+              <option value="Humor">Humor</option>
+              <option value="Sci-Fi">Sci-Fi</option>
+            </select>
+          </div>
+        </form>
+        <button id="saveBtn">Save to library</button>
+      </section>
+      <section id="sortFilter">
+        <div id="filterDiv">
+          <label for="filter">Filter by genre:</label>
+          <select name="filter" id="filter">
+            <option value="" selected disabled hidden>-- genre --</option>
+            <option value="Young Adult (YA)">Young Adult (YA)</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Crime">Crime</option>
+            <option value="Romance">Romance</option>
+            <option value="Horror">Horror</option>
+            <option value="Mystery">Mystery/Thriller</option>
+            <option value="Science">Science</option>
+            <option value="History">History</option>
+            <option value="Children's Stories">Children's Stories</option>
+            <option value="Biography">Biography</option>
+            <option value="Self-Improvement">Self-Improvement</option>
+            <option value="Historical Fiction">Historical Fiction</option>
+            <option value="Humor">Humor</option>
+            <option value="Sci-Fi">Sci-Fi</option>
           </select>
+          <button id="filterBtn">Filter</button>
+          <button id="resetBtn">Reset</button>
         </div>
-      </form>
-      <button id="saveBtn">Save to library</button>
-    </section>
-    <section id="sortFilter">
-      <div id="filterDiv">
-        <label for="filter">Filter by genre</label>
-        <select name="filter" id="filter">
-          <option value="" selected disabled hidden>Choose genre</option>
-          <option value="ya">Young Adult (YA)</option>
-          <option value="fantasy">Fantasy</option>
-          <option value="crime">Crime</option>
-          <option value="romance">Romance</option>
-          <option value="horror">Horror</option>
-          <option value="mystery">Mystery/Thriller</option>
-          <option value="science">Science</option>
-          <option value="history">History</option>
-          <option value="children">Children's Stories</option>
-          <option value="biography">Biography</option>
-          <option value="self-improvement">Self-Improvement</option>
-          <option value="historical Fiction">Historical Fiction</option>
-          <option value="humor">Humor</option>
-          <option value="sci-fi">Sci-Fi</option>
-        </select>
-        <button id="filterBtn">Filter</button>
-        <button class="resetBtn">Reset</button>
-      </div>
-      <div id="sortDiv">
-        <label for="sort">Sort by:</label>
-        <select name="sort" id="sort">
-          <option value="" selected disabled></option>
-          <option value="titleAZ">by title, A-Z</option>
-          <option value="titleZA">by title Z-A</option>
-          <option value="ascYear">by year published, ascending</option>
-          <option value="desYear">by year published, descending</option>
-          <option value="ascPages">by number of pages, ascending</option>
-          <option value="desPages">by number of pages, descending</option>
-        </select>
-        <button id="sortBtn">Sort</button>
-        <button class="resetBtn">Reset</button>
-      </div>
-    </section>
+        <div id="sortDiv">
+          <label for="sort">Sort by:</label>
+          <select name="sort" id="sort">
+            <option value="titleAZ" selected>by title, A-Z</option>
+            <option value="titleZA">by title Z-A</option>
+            <option value="ascYear">by year published, old to new</option>
+            <option value="desYear">by year published, new to old</option>
+            <option value="ascPages">by number of pages, short to long</option>
+            <option value="desPages">by number of pages, long to short</option>
+          </select>
+          <button id="sortBtn">Sort</button>
+        </div>
+      </section>
+    </main>
     <section id="myLibrary"></section>
   </body>
 </html>

@@ -7,7 +7,7 @@ export const dom = {
   genreOf: document.getElementById("bookGenreInput"),
   filterSelect: document.getElementById("filter"),
   filterBtn: document.getElementById("filterBtn"),
-  resetBtn: document.getElementsByClassName("resetBtn"),
+  resetBtn: document.getElementById("resetBtn"),
   sortSelect: document.getElementById("sort"),
   sortBtn: document.getElementById("sortBtn"),
 };

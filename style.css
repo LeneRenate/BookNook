@@ -39,6 +39,12 @@ h1 {
   text-shadow: var(--heading-outline);
 }
 
+main {
+  display: flex;
+  flex-direction: row;
+  gap: 75px;
+}
+
 /* 
 section  #addBook
 > form  #bookForm
@@ -109,6 +115,37 @@ input {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 50px;
+}
+
+/* 
+section  #sortFilter
+> div  #filterDiv
+> >  label
+> > select  #filter
+> > > option (x15?)
+> > button  #filterBtn
+> > button  #resetBtn
+> div  #sortDiv
+> > label
+> > select  #sort
+> > > option (x6)
+> > button  #sortBtn
+*/
+
+#sortFilter {
+  width: 400px;
+  height: 175px;
+  background-color: var(--bg-sheer-blue);
+  padding: 20px;
+
+  border: 5px solid var(--bg-blue);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 /* 
