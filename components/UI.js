@@ -1,7 +1,19 @@
 import { fetchBooks, deleteBook } from "./LocalStorage.js";
 import { dom } from "./DOM.js";
 
-const { myLibrary, titleOf, authorOf, yearOf, pagesOf, genreOf } = dom;
+const {
+  myLibrary,
+  titleOf,
+  authorOf,
+  yearOf,
+  pagesOf,
+  genreOf,
+  filterSelect,
+  filterBtn,
+  resetBtn,
+  sortSelect,
+  sortBtn,
+} = dom;
 
 const makeBookCard = (object, id) => {
   const { title, author, year, pages, genre } = object;
@@ -45,6 +57,13 @@ const makeBookCard = (object, id) => {
     yearOf.value = year;
     pagesOf.value = pages;
     genreOf.value = genre;
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+
     deleteBook(id);
   });
 
@@ -65,13 +84,19 @@ const makeBookCard = (object, id) => {
 
 export const updateDisplayedBooks = () => {
   const allBooks = fetchBooks();
-  // const filter og sort
+  const filterValue = filterSelect.value;
+  const sortValue = sortSelect.value;
 
-  // let booksDisplayed:
+  let booksDisplayed;
 
-  // if..else
-
-  let booksDisplayed = allBooks;
+  if (filterValue) {
+    booksDisplayed = allBooks.filter((book) => book.genre === filterValue);
+  } else if (sortValue === "titleAZ") {
+    booksDisplayed = allBooks.sort((a, b) => a.title.localeCompare(b.title));
+    console.log("hei");
+  } else {
+    booksDisplayed = allBooks;
+  }
 
   renderUI(booksDisplayed);
   console.log(booksDisplayed);
@@ -87,3 +112,11 @@ const renderUI = (booksDisplayed) => {
 };
 
 // Add eventListeners (updateBooksDisplayed on click) for filter and sort
+
+filterBtn.addEventListener("click", () => {
+  updateDisplayedBooks();
+});
+
+sortBtn.addEventListener("click", () => {
+  updateDisplayedBooks();
+});

@@ -5,8 +5,9 @@ export const dom = {
   yearOf: document.getElementById("bookYearInput"),
   pagesOf: document.getElementById("bookPagesInput"),
   genreOf: document.getElementById("bookGenreInput"),
+  filterSelect: document.getElementById("filter"),
+  filterBtn: document.getElementById("filterBtn"),
+  resetBtn: document.getElementsByClassName("resetBtn"),
+  sortSelect: document.getElementById("sort"),
+  sortBtn: document.getElementById("sortBtn"),
 };
-
-// Add:
-// Sort-section + sortBtn (also in html)
-// Filter-section + filterBtn (also in html)
