@@ -13,6 +13,8 @@ saveBtn.addEventListener("click", (_event) => {
 
 const getFormData = (formElement) => {
   const formData = new FormData(formElement);
+  console.log(formData);
+
   return Object.fromEntries(formData);
 };
 
@@ -25,6 +27,8 @@ const makeBook = (formElement) => {
     data.bookPagesInput,
     data.bookGenreInput
   );
+  console.log(book);
+
   storeBooks(book);
 };
 
