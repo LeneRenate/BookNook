@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="main.js" defer></script>
-    <!-- <script src="ClearStorage.js"></script> -->
+    <!-- <script type="module" src="main.js" defer></script> -->
+    <script src="ClearStorage.js"></script>
     <title>My BookNook</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -39,6 +39,8 @@
             name="bookYearInput"
             id="bookYearInput"
             placeholder="1954"
+            min="1500"
+            size="4"
           />
         </div>
         <div class="infoFields">
@@ -48,20 +50,39 @@
             name="bookPagesInput"
             id="bookPagesInput"
             placeholder="1077"
+            size="5"
           />
         </div>
         <div class="infoFields">
           <label for="bookGenreInput">Genre:</label>
-          <input
+          <select name="bookGenreInput" id="bookGenreInput">
+            <option value="" selected disabled hidden>Choose genre</option>
+            <option value="ya">Young Adult (YA)</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="crime">Crime</option>
+            <option value="romance">Romance</option>
+            <option value="horror">Horror</option>
+            <option value="mystery">Mystery/Thriller</option>
+            <option value="science">Science</option>
+            <option value="history">History</option>
+            <option value="children">Children's Stories</option>
+            <option value="biography">Biography</option>
+            <option value="self-improvement">Self-Improvement</option>
+            <option value="historical Fiction">Historical Fiction</option>
+            <option value="humor">Humor</option>
+            <option value="sci-fi">Sci-Fi</option>
+          </select>
+          <!-- <input
             type="text"
             name="bookGenreInput"
             id="bookGenreInput"
             placeholder="Fantasy"
-          />
+          /> -->
         </div>
       </form>
       <button id="saveBtn">Save to library</button>
     </section>
+    <section id="sortFilter"></section>
     <section id="myLibrary"></section>
   </body>
 </html>

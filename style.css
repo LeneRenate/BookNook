@@ -1,5 +1,6 @@
 :root {
   --bg-blue: hsl(208, 25%, 42%);
+  --dark-blue: hsl(208, 25%, 15px);
   --bg-sheer-blue: hsla(208, 25%, 42%, 0.85);
   --heading-outline: 0 0 2px white;
   --text-outline: 0 0 1px white;
@@ -20,6 +21,8 @@ body {
   background-image: url(./images/Library_Backdrop.png);
   font-family: Calibri, sans-serif;
   font-size: 16px;
+
+  padding-left: 5%;
 }
 
 h1 {
@@ -50,7 +53,6 @@ section  #myLibrary
   width: 40%;
   background-color: var(--bg-sheer-blue);
   padding: 20px 20px 20px 5%;
-  margin-left: 5%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -95,9 +97,13 @@ input {
 }
 
 #myLibrary {
+  margin-top: 15svh;
+
   display: flex;
   flex-flow: row wrap;
-  margin-top: 15svh;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
 }
 
 /* 
@@ -112,9 +118,9 @@ article  .bookCard
 */
 
 .bookCard {
-  width: 320px;
-  margin-left: 5%;
-  padding: 15px;
+  width: 250px;
+  height: 300px;
+  padding: 20px;
   background-color: var(--bg-blue);
 
   display: flex;
@@ -126,6 +132,8 @@ article  .bookCard
 }
 
 .modBtns {
+  position: relative;
+  bottom: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -134,4 +142,9 @@ article  .bookCard
 
 .modBtns button {
   width: 60px;
+  height: 2rem;
+  background-color: aliceblue;
+
+  border: 3px outset var(--dark-blue);
+  border-radius: 3px;
 }
